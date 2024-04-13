@@ -22,5 +22,22 @@ public class DialogContent_Oguzhan extends ParentPage{
     @FindBy(css = "[data-bind='html: $parent.prepareMessageForHtml(message.text)']")
     public WebElement accountSuccessfuly;
 
+    public  WebElement getWebelement(String element){
+
+        switch (element){
+
+            case "firstname": return this.firstname;
+            case "lastname": return this.lastname;
+            case "email": return this.email;
+            case "password": return this.password;
+            case "passwordStrength": return this.passwordStrength;
+            case "confirmPassword": return this.confirmPassword;
+            case "createAnAccountButton": return this.createAnAccountButton;
+            case "accountSuccessfuly": return this.accountSuccessfuly;
+
+        }
+        return  null;
+    }
+
 
 }
