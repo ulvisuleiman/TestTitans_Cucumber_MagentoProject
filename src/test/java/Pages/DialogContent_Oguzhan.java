@@ -7,15 +7,20 @@ public class DialogContent_Oguzhan extends ParentPage{
 
     @FindBy(id = "firstname")
     public WebElement firstname;
-    @FindBy(xpath = "lastname")
+    @FindBy(id = "lastname")
     public WebElement lastname;
-    @FindBy(xpath = "//ul[@class='header links']//li[3]")
+    @FindBy(id = "email_address")
     public WebElement email;
-    @FindBy(xpath = "//ul[@class='header links']//li[3]")
+    @FindBy(css = "[id='password']")
     public WebElement password;
-    @FindBy(xpath = "//ul[@class='header links']//li[3]")
+    @FindBy(xpath = "//span[@id='password-strength-meter-label']")
+    public WebElement passwordStrength;
+    @FindBy(xpath = "//input[@id='password-confirmation']")
     public WebElement confirmPassword;
-    @FindBy(xpath = "//ul[@class='header links']//li[3]")
+    @FindBy(css = "[title='Create an Account']")
     public WebElement createAnAccountButton;
+    @FindBy(css = "[data-bind='html: $parent.prepareMessageForHtml(message.text)']")
+    public WebElement accountSuccessfuly;
+
 
 }
