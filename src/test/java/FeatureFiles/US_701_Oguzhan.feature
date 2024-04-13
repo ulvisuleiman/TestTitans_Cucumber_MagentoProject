@@ -22,4 +22,4 @@ Feature: Register Functionality
 
     Examples:
       | fname       |  | lname       |  | mail                    |  | pssword  |  | conPssword |
-      | testTitans2 |  | TestTitans3 |  | TestTitans2@example.com |  | Passw0rd |  | Passw0rd   |
+      | testTitans3 |  | TestTitans4 |  | TestTitans3@example.com |  | Passw0rd |  | Passw0rd   |
