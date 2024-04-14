@@ -11,6 +11,7 @@ public class DialogContent_Oguzhan extends ParentPage {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
+//    ***************US-701****************
     @FindBy(id = "firstname")
     public WebElement firstname;
     @FindBy(id = "lastname")
@@ -27,6 +28,27 @@ public class DialogContent_Oguzhan extends ParentPage {
     public WebElement createAnAccountButton;
     @FindBy(css = "[data-bind='html: $parent.prepareMessageForHtml(message.text)']")
     public WebElement accountSuccessfuly;
+
+    //    ***************US-704****************
+
+    @FindBy(linkText = "What's New")
+    public WebElement WhatsNew;
+    @FindBy(css = "[class='ui-menu-icon ui-icon ui-icon-carat-1-e']+span")
+    public WebElement woman;
+    @FindBy(linkText = "Tops")
+    public WebElement tops;
+    @FindBy(css = "[id='ui-id-10']>span+span")
+    public WebElement bottoms;
+    @FindBy(xpath = "//a[@id='ui-id-11']/span")
+    public WebElement jackets;
+    @FindBy(linkText = "Hoodies & Sweatshirts")
+    public WebElement HoodiesSweatshirts;
+    @FindBy(css = "[id='ui-id-13']")
+    public WebElement tees;
+    @FindBy(xpath = "//a[@id='ui-id-14']")
+    public WebElement brasTanks;
+
+
 
     public WebElement getWebelement(String element) {
 
