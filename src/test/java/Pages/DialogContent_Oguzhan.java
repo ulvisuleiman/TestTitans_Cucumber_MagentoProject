@@ -11,7 +11,7 @@ public class DialogContent_Oguzhan extends ParentPage {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-//    ***************US-701****************
+    //    ***************US-701****************
     @FindBy(id = "firstname")
     public WebElement firstname;
     @FindBy(id = "lastname")
@@ -33,7 +33,7 @@ public class DialogContent_Oguzhan extends ParentPage {
 
     @FindBy(linkText = "What's New")
     public WebElement WhatsNew;
-    @FindBy(css = "[class='ui-menu-icon ui-icon ui-icon-carat-1-e']+span")
+    @FindBy(xpath = "//span[text()='Women']")
     public WebElement woman;
     @FindBy(linkText = "Tops")
     public WebElement tops;
@@ -57,13 +57,18 @@ public class DialogContent_Oguzhan extends ParentPage {
     public WebElement tanks;
     @FindBy(xpath = "//span[text()='Gear']")
     public WebElement gear;
-    @FindBy(xpath = "//a[@id='ui-id-16']")
-    public WebElement womanShorts;
-
-
-
-
-
+    @FindBy(linkText = "Bags")
+    public WebElement bags;
+    @FindBy(linkText = "Fitness Equipment")
+    public WebElement fitnessEquipment;
+    @FindBy(linkText = "Watches")
+    public WebElement watches;
+    @FindBy(xpath = "//span[text()='Training']")
+    public WebElement training;
+    @FindBy(linkText = "Video Download")
+    public WebElement videoDownload;
+    @FindBy(xpath = "//span[text()='Sale']")
+    public WebElement sale;
 
 
     public WebElement getWebelement(String element) {
@@ -82,6 +87,44 @@ public class DialogContent_Oguzhan extends ParentPage {
                 return this.confirmPassword;
             case "createAnAccountButton":
                 return this.createAnAccountButton;
+            case "WhatsNew":
+                return this.WhatsNew;
+            case "woman":
+                return this.woman;
+            case "tops":
+                return this.tops;
+            case "bottoms":
+                return this.bottoms;
+            case "jackets":
+                return this.jackets;
+            case "hoodiesSweatshirts":
+                return this.hoodiesSweatshirts;
+            case "tees":
+                return this.tees;
+            case "brasTanks":
+                return this.brasTanks;
+            case "pants":
+                return this.pants;
+            case "shorts":
+                return this.shorts;
+            case "men":
+                return this.men;
+            case "tanks":
+                return this.tanks;
+            case "gear":
+                return this.gear;
+            case "bags":
+                return this.bags;
+            case "fitnessEquipment":
+                return this.fitnessEquipment;
+            case "watches":
+                return this.watches;
+            case "training":
+                return this.training;
+            case "videoDownload":
+                return this.videoDownload;
+            case "sale":
+                return this.sale;
 
 
         }
