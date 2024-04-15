@@ -13,4 +13,7 @@ public class LeftNav_Mert extends ParentPage{
 
     @FindBy (xpath = "(//button[@id='send2']/span)[1]")
     public WebElement LoginButton;
+
+    @FindBy (xpath = "(//span[text()='Forgot Your Password?'])[1]")
+    public WebElement forgotMyPasswordButton;
 }
