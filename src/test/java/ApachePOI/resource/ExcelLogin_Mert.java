@@ -43,7 +43,7 @@ public class ExcelLogin_Mert {
         String path = "src/test/java/ApachePOI/resource/UsernameAndPassword.xlsx";
         FileInputStream inputStream = new FileInputStream(path);
         Workbook workbook = WorkbookFactory.create(inputStream);
-        Sheet sheet = workbook.getSheetAt(0);
+        Sheet sheet = workbook.getSheet("UsernameAndPassword");
 
         DialogContent_Mert dcm = new DialogContent_Mert();
         String searchWord = "Username";

@@ -27,7 +27,7 @@ public class US_702_MertSteps {
 
     @And("User should only fill in the e-mail section")
     public void userShouldOnlyFillInTheEMailSection() {
-        dcm.mySendKeys(dcm.emailInput, "TestTitans2@example.com");
+        dcm.mySendKeys(dcm.emailInput, "TestTitans3@example.com");
         dcm.myClick(lfm.LoginButton);
     }
 
@@ -38,7 +38,8 @@ public class US_702_MertSteps {
 
     @And("User should only fill in the password section")
     public void userShouldOnlyFillInThePasswordSection() {
-        dcm.mySendKeys(dcm.passwordInput, "Passw0rd");
+        dcm.emailInput.clear();
+        dcm.mySendKeys(dcm.passwordInput, "Passw0rd33");
         dcm.myClick(lfm.LoginButton);
     }
 
@@ -49,7 +50,9 @@ public class US_702_MertSteps {
 
     @And("User must enter wrong email and password")
     public void userMustEnterWrongEmailAndPassword() {
+        dcm.emailInput.clear();
         dcm.mySendKeys(dcm.emailInput, "meeeer.t@gmail.com");
+        dcm.passwordInput.clear();
         dcm.mySendKeys(dcm.passwordInput, "12345");
         dcm.myClick(lfm.LoginButton);
     }
