@@ -1,14 +1,17 @@
 package ApachePOI.resource;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
+import Pages.DialogContent_Mert;
+import Pages.ParentPage;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class ExcelLogin_Mert {
+public class ExcelLogin_Mert extends ParentPage {
 
     public static void main(String[] args) throws IOException {
 
@@ -24,7 +27,7 @@ public class ExcelLogin_Mert {
         Row newRow1 = sheet.createRow(1);
         Cell newCell2 = newRow1.createCell(0);
         newCell2.setCellValue("Password:");
-        Cell newCell3=newRow1.createCell(1);
+        Cell newCell3 = newRow1.createCell(1);
         newCell3.setCellValue("Passw0rd");
 
         String path = "src/test/java/ApachePOI/resource/UsernameAndPassword.xlsx";
@@ -34,4 +37,36 @@ public class ExcelLogin_Mert {
         outputStream.close();
 
     }
+
+    public static void excelWord() throws IOException {
+        String path = "src/test/java/ApachePOI/resource/UsernameAndPassword.xlsx";
+        FileInputStream inputStream = new FileInputStream(path);
+        Workbook workbook = WorkbookFactory.create(inputStream);
+        Sheet sheet = workbook.getSheetAt(0);
+
+        DialogContent_Mert dcm = new DialogContent_Mert();
+        String searchWord = "Username";
+        String searchWord1 = "Password";
+
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+
+            if (sheet.getRow(i).getCell(0).toString().equalsIgnoreCase(searchWord)) {
+
+                for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {
+                    dcm.mySendKeys(dcm.emailInput, String.valueOf(sheet.getRow(0).getCell(1)));
+                }
+
+                if (sheet.getRow(i).getCell(0).toString().equalsIgnoreCase(searchWord1)) {
+
+                    for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {
+                        dcm.mySendKeys(dcm.passwordInput, String.valueOf(sheet.getRow(1).getCell(1)));
+
+                    }
+                }
+            }
+        }
+    inputStream.close();
+    }
 }
+
+
