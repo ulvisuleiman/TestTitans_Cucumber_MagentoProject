@@ -28,7 +28,7 @@ public class US_702_MertSteps {
 
     @And("User should receive incorrect login warning")
     public void userShouldReceiveIncorrectLoginWarning() {
-        lfm.verifyContainsText(dcm.errorMessage, "required field");
+        lfm.verifyContainsText(dcm.errorMessage, "sign in with your email address");
     }
 
     @Then("User should only fill in the e-mail section")

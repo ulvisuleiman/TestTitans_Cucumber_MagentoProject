@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class DialogContent_Mert extends ParentPage{
     public DialogContent_Mert() {PageFactory.initElements(GWD.getDriver(),this);}
 
-    @FindBy (css = "[id='email-error']")
+    @FindBy (css = "[class='field note']")
     public WebElement errorMessage;
 
     @FindBy (css = "[name='login[username]']")

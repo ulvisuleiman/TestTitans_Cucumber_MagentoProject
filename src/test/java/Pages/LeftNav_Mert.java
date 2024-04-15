@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LeftNav_Mert extends ParentPage{
     public LeftNav_Mert() {PageFactory.initElements(GWD.getDriver(),this);}
 
-    @FindBy (xpath = "(//li[@class='authorization-link']/a)[2]")
+    @FindBy (xpath = "(//li[@class='authorization-link']/a)[1]")
     public WebElement SignInButton;
 
     @FindBy (xpath = "(//button[@id='send2']/span)[1]")
