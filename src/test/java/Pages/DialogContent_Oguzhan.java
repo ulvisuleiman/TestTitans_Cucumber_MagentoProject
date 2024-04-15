@@ -36,17 +36,25 @@ public class DialogContent_Oguzhan extends ParentPage {
     @FindBy(css = "[class='ui-menu-icon ui-icon ui-icon-carat-1-e']+span")
     public WebElement woman;
     @FindBy(linkText = "Tops")
-    public WebElement tops;
+    public WebElement womanTops;
     @FindBy(css = "[id='ui-id-10']>span+span")
-    public WebElement bottoms;
+    public WebElement womanBottoms;
     @FindBy(xpath = "//a[@id='ui-id-11']/span")
-    public WebElement jackets;
+    public WebElement womanJackets;
     @FindBy(linkText = "Hoodies & Sweatshirts")
-    public WebElement HoodiesSweatshirts;
+    public WebElement womanHoodiesSweatshirts;
     @FindBy(css = "[id='ui-id-13']")
-    public WebElement tees;
+    public WebElement womanTees;
     @FindBy(xpath = "//a[@id='ui-id-14']")
-    public WebElement brasTanks;
+    public WebElement womanBrasTanks;
+    @FindBy(xpath = "//a[@id='ui-id-15'")
+    public WebElement womanPants;
+    @FindBy(xpath = "//a[@id='ui-id-16']")
+    public WebElement womanShorts;
+
+
+
+
 
 
 
