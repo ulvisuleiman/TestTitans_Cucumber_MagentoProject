@@ -5,6 +5,7 @@ import Pages.ParentPage;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebElement;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -38,7 +39,7 @@ public class ExcelLogin_Mert {
 
     }
 
-    public static void excelWord() throws IOException {
+    public static void excelWord(WebElement emailInput, WebElement passwordInput) throws IOException {
         String path = "src/test/java/ApachePOI/resource/UsernameAndPassword.xlsx";
         FileInputStream inputStream = new FileInputStream(path);
         Workbook workbook = WorkbookFactory.create(inputStream);
@@ -53,13 +54,13 @@ public class ExcelLogin_Mert {
             if (sheet.getRow(i).getCell(0).toString().equalsIgnoreCase(searchWord)) {
 
                 for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {
-                    dcm.mySendKeys(dcm.emailInput, String.valueOf(sheet.getRow(0).getCell(1)));
+                    dcm.mySendKeys(emailInput, String.valueOf(sheet.getRow(0).getCell(1)));
                 }
 
                 if (sheet.getRow(i).getCell(0).toString().equalsIgnoreCase(searchWord1)) {
 
                     for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {
-                        dcm.mySendKeys(dcm.passwordInput, String.valueOf(sheet.getRow(1).getCell(1)));
+                        dcm.mySendKeys(passwordInput, String.valueOf(sheet.getRow(1).getCell(1)));
 
                     }
                 }
