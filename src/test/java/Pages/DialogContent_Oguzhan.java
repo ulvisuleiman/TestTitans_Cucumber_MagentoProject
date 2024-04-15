@@ -36,19 +36,29 @@ public class DialogContent_Oguzhan extends ParentPage {
     @FindBy(css = "[class='ui-menu-icon ui-icon ui-icon-carat-1-e']+span")
     public WebElement woman;
     @FindBy(linkText = "Tops")
-    public WebElement womanTops;
-    @FindBy(css = "[id='ui-id-10']>span+span")
-    public WebElement womanBottoms;
-    @FindBy(xpath = "//a[@id='ui-id-11']/span")
-    public WebElement womanJackets;
+    public WebElement tops;
+    @FindBy(linkText = "Bottoms")
+    public WebElement bottoms;
+    @FindBy(linkText = "Jackets")
+    public WebElement jackets;
     @FindBy(linkText = "Hoodies & Sweatshirts")
-    public WebElement womanHoodiesSweatshirts;
-    @FindBy(css = "[id='ui-id-13']")
-    public WebElement womanTees;
-    @FindBy(xpath = "//a[@id='ui-id-14']")
-    public WebElement womanBrasTanks;
-    @FindBy(xpath = "//a[@id='ui-id-15'")
-    public WebElement womanPants;
+    public WebElement hoodiesSweatshirts;
+    @FindBy(linkText = "Tees")
+    public WebElement tees;
+    @FindBy(linkText = "Bras & Tanks")
+    public WebElement brasTanks;
+    @FindBy(linkText = "Pants")
+    public WebElement pants;
+    @FindBy(linkText = "Shorts")
+    public WebElement shorts;
+    @FindBy(xpath = "//span[text()='Men']")
+    public WebElement men;
+    @FindBy(xpath = "//a[@id='ui-id-16']")
+    public WebElement womanShorts;
+    @FindBy(xpath = "//a[@id='ui-id-16']")
+    public WebElement womanShorts;
+    @FindBy(xpath = "//a[@id='ui-id-16']")
+    public WebElement womanShorts;
     @FindBy(xpath = "//a[@id='ui-id-16']")
     public WebElement womanShorts;
 
