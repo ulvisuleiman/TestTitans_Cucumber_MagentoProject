@@ -53,12 +53,10 @@ public class DialogContent_Oguzhan extends ParentPage {
     public WebElement shorts;
     @FindBy(xpath = "//span[text()='Men']")
     public WebElement men;
-    @FindBy(xpath = "//a[@id='ui-id-16']")
-    public WebElement womanShorts;
-    @FindBy(xpath = "//a[@id='ui-id-16']")
-    public WebElement womanShorts;
-    @FindBy(xpath = "//a[@id='ui-id-16']")
-    public WebElement womanShorts;
+    @FindBy(linkText = "Tanks")
+    public WebElement tanks;
+    @FindBy(xpath = "//span[text()='Gear']")
+    public WebElement gear;
     @FindBy(xpath = "//a[@id='ui-id-16']")
     public WebElement womanShorts;
 
