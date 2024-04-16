@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DialogContent_Zehra extends ParentPage{
     public DialogContent_Zehra() {
         PageFactory.initElements(GWD.getDriver(), this);
@@ -16,7 +18,7 @@ public class DialogContent_Zehra extends ParentPage{
     @FindBy(xpath = "(//*[text()='Shorts'])[1]")
     public WebElement shortsTab;
     @FindBy(xpath = "//div[@class='products wrapper grid products-grid']/ol/li")
-    public WebElement shortsSelection;
+    public List<WebElement> shortsSelection;
 
 
 
