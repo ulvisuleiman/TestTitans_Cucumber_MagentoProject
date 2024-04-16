@@ -46,8 +46,8 @@ public class ExcelLogin_Mert {
         Sheet sheet = workbook.getSheet("UsernameAndPassword");
 
         DialogContent_Mert dcm = new DialogContent_Mert();
-        String searchWord = "Username";
-        String searchWord1 = "Password";
+        String searchWord = "Username:";
+        String searchWord1 = "Password:";
 
         for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
 
@@ -56,6 +56,7 @@ public class ExcelLogin_Mert {
                 for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {
                     dcm.mySendKeys(emailInput, String.valueOf(sheet.getRow(0).getCell(1)));
                 }
+            }
 
                 if (sheet.getRow(i).getCell(0).toString().equalsIgnoreCase(searchWord1)) {
 
@@ -64,7 +65,6 @@ public class ExcelLogin_Mert {
 
                     }
                 }
-            }
         }
     inputStream.close();
     }
