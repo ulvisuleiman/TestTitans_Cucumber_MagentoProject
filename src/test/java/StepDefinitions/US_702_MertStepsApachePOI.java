@@ -19,7 +19,7 @@ public class US_702_MertStepsApachePOI {
     }
     @Then("Finally, user must login to the account")
     public void finallyUserMustLoginToTheAccount() throws IOException {
-        ExcelLogin_Mert.excelWord();
+        ExcelLogin_Mert.excelWord(dcm.emailInput, dcm.passwordInput);
         dcm.myClick(lfm.LoginButton);
     }
 
