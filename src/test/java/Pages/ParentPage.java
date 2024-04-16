@@ -25,7 +25,7 @@ public class ParentPage {
     }
 
     public void mySendKeys(WebElement element,String text){
-        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.visibilityOf(element)).clear();
         scrollToElement(element);
         element.clear();
         element.sendKeys(text);
