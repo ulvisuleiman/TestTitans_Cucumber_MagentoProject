@@ -19,6 +19,12 @@ public class DialogContent_Zehra extends ParentPage{
     public WebElement shortsTab;
     @FindBy(xpath = "//div[@class='products wrapper grid products-grid']/ol/li")
     public List<WebElement> shortsSelection;
+    @FindBy(xpath = "//div[@role='listbox']")
+    public List<WebElement> listboxSize;
+    @FindBy(xpath = "//div[@role='listbox']")
+    public List<WebElement> listboxColor;
+    @FindBy(xpath = "//button[@title='Add to Cart']")
+    public WebElement addToCart;
 
 
 

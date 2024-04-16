@@ -8,5 +8,6 @@ Feature: Adding and removing items from cart
 
     Scenario: User should select an item and delete it
       When Click on random category from Tab Menu
-      Then Add random item from the list to cart
+      Then Add random item from the list
+      And Select random size and color of the item and add to cart
       And Delete the item from the cart

@@ -15,15 +15,34 @@ public class US_705_ZehraSteps {
         dc.myClick(dc.shortsTab);
     }
 
-    @Then("Add random item from the list to cart")
+    @Then("Add random item from the list")
     public void addRandomItemFromTheListToCart() {
         int rndmSelection = (int) (Math.random() * dc.shortsSelection.size());
         WebElement shorts = dc.shortsSelection.get(rndmSelection);
         System.out.println(shorts.getText());
         dc.myClick(shorts);
+
     }
 
+    @And("Select random size and color of the item and add to cart")
+    public void selectRandomSizeAndColorOfTheItemAndAddToCart() {
+        int rndmSizeSelection = (int) (Math.random() * dc.listboxSize.size());
+        WebElement sizes = dc.listboxSize.get(rndmSizeSelection);
+        System.out.println(sizes.getText());
+        dc.myClick(sizes);
+
+        int rndmColorSelection = (int) (Math.random() * dc.listboxColor.size());
+        WebElement colors = dc.listboxColor.get(rndmColorSelection);
+        System.out.println(colors.getText());
+        dc.myClick(colors);
+
+        dc.myClick(dc.addToCart);
+    }
     @And("Delete the item from the cart")
     public void deleteTheItemFromTheCart() {
+
     }
+
+
+
 }
