@@ -17,12 +17,15 @@ public class DialogContent_Zehra extends ParentPage{
     public WebElement bottomsTab;
     @FindBy(xpath = "(//*[text()='Shorts'])[1]")
     public WebElement shortsTab;
-    @FindBy(xpath = "//div[@class='products wrapper grid products-grid']/ol/li")
+    @FindBy(xpath = "//ol[@class='products list items product-items']/li")
     public List<WebElement> shortsSelection;
-    @FindBy(xpath = "//div[@role='listbox']")
+    @FindBy(css = "[role='listbox'] [class='swatch-option text']")
     public List<WebElement> listboxSize;
-    @FindBy(xpath = "//div[@role='listbox']")
+
+    @FindBy(css = "[class='swatch-attribute color'] [class='swatch-option color']")
     public List<WebElement> listboxColor;
+    @FindBy(css = "[id='qty']")
+    public WebElement qty;
     @FindBy(xpath = "//button[@title='Add to Cart']")
     public WebElement addToCart;
 

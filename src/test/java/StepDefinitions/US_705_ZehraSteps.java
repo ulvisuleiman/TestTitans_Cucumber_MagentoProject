@@ -1,14 +1,17 @@
 package StepDefinitions;
 
 import Pages.DialogContent_Zehra;
+import Pages.ParentPage;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -33,23 +36,36 @@ public class US_705_ZehraSteps {
         int rndmSelection = (int) (Math.random() * dc.shortsSelection.size());
         WebElement shorts = dc.shortsSelection.get(rndmSelection);
         System.out.println(shorts.getText());
-        dc.myClick(shorts);
+        dc.myJSClick(shorts);
 
     }
 
     @And("Select random size and color of the item and add to cart")
     public void selectRandomSizeAndColorOfTheItemAndAddToCart() {
+        wait.until(ExpectedConditions.urlContains("short"));
+
         int rndmSizeSelection = (int) (Math.random() * dc.listboxSize.size());
         WebElement sizes = dc.listboxSize.get(rndmSizeSelection);
         System.out.println(sizes.getText());
-        dc.myClick(sizes);
+        wait.until(ExpectedConditions.elementToBeClickable(sizes));
+        dc.myJSClick(sizes);
+
 
         int rndmColorSelection = (int) (Math.random() * dc.listboxColor.size());
         WebElement colors = dc.listboxColor.get(rndmColorSelection);
         System.out.println(colors.getText());
-        dc.myClick(colors);
+        wait.until(ExpectedConditions.elementToBeClickable(colors));
+        dc.myJSClick(colors);
 
-        dc.myClick(dc.addToCart);
+        //wait.until(ExpectedConditions.elementToBeClickable(dc.qty));
+        //actions.moveToElement(dc.qty).doubleClick().build().perform();
+
+        //dc.myJSClick(dc.qty);
+        //dc.qty.clear();
+        //dc.qty.sendKeys("2");
+
+        //actions.moveToElement(dc.qty).doubleClick(dc.qty).sendKeys("2").build().perform();
+        //dc.myJSClick(dc.addToCart);
     }
     @And("Delete the item from the cart")
     public void deleteTheItemFromTheCart() {
