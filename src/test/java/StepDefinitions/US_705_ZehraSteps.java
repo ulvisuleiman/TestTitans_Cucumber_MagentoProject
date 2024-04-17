@@ -16,9 +16,10 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class US_705_ZehraSteps {
-    DialogContent_Zehra dc=new DialogContent_Zehra();
-    Actions actions=new Actions(GWD.getDriver());
-    public WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(7));
+    DialogContent_Zehra dc = new DialogContent_Zehra();
+    Actions actions = new Actions(GWD.getDriver());
+    public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(7));
+
     @When("Click on random category from Tab Menu")
     public void clickOnRandomCategoryFromTabMenu() {
         actions.moveToElement(dc.womenTab).build().perform();
@@ -68,19 +69,24 @@ public class US_705_ZehraSteps {
         dc.myJSClick(dc.addToCart);
         wait.until(ExpectedConditions.elementToBeClickable(dc.myCart));
     }
+
     @And("Delete the item from the cart")
     public void deleteTheItemFromTheCart() {
         dc.myJSClick(dc.myCart);
-       // dc.myJSClick(dc.deleteCart);
-       int trashButton = (int) (Math.random() * dc.deleteCart.size());
-       String trash = dc.deleteCart.get(trashButton).getText();
-       dc.deleteCart.get(trashButton).click();
+        // dc.myJSClick(dc.deleteCart);
+        if (dc.deleteCart.size() >= 2) {
+            int trashButton = (int) (Math.random() * dc.deleteCart.size());
+            String trash = dc.deleteCart.get(trashButton).getText();
+            dc.deleteCart.get(trashButton).click();
+            Assert.assertTrue(trash.isBlank());
+        } else
+            dc.myClick(dc.myCart);
+        dc.myClick(dc.trashcan);
 
-       //dc.myJSClick(trash);
-        //dc.myJSClick(dc.okButton);
+        //dc.myJSClick(trash);
+        dc.myClick(dc.okButton);
 
     }
-
 
 
 }

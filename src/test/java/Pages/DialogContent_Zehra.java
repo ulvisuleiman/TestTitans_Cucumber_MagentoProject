@@ -33,7 +33,9 @@ public class DialogContent_Zehra extends ParentPage {
     public WebElement myCart;
     @FindBy(css = "[class='action delete']")
     public List<WebElement> deleteCart;
-    @FindBy(css = "[class='action-primary action-accept']")
+    @FindBy(xpath = "//a[@title='Remove item']")
+    public WebElement trashcan;
+    @FindBy(css = "[class='modal-footer']>button+button")
     public WebElement okButton;
 
 
