@@ -37,6 +37,8 @@ public class DialogContent_Zehra extends ParentPage {
     public WebElement trashcan;
     @FindBy(css = "[class='modal-footer']>button+button")
     public WebElement okButton;
+    @FindBy(xpath = "//*[@id='minicart-content-wrapper']")
+    public WebElement noItems;
 
 
 }

@@ -25,10 +25,7 @@ public class US_705_ZehraSteps {
         actions.moveToElement(dc.womenTab).build().perform();
         wait.until(ExpectedConditions.visibilityOf(dc.bottomsTab));
         actions.moveToElement(dc.bottomsTab).perform();
-        //dc.myClick(dc.womenTab);
-        //new Actions(GWD.getDriver()).moveToElement(dc.bottomsTab).build().perform();
 
-        //dc.myClick(dc.bottomsTab);
         dc.myJSClick(dc.shortsTab);
     }
 
@@ -36,7 +33,6 @@ public class US_705_ZehraSteps {
     public void addRandomItemFromTheListToCart() {
         int rndmSelection = (int) (Math.random() * dc.shortsSelection.size());
         String shorts = dc.shortsSelection.get(rndmSelection).getText();
-        //System.out.println(shorts.getText());
         dc.shortsSelection.get(rndmSelection).click();
 
     }
@@ -58,14 +54,10 @@ public class US_705_ZehraSteps {
         wait.until(ExpectedConditions.elementToBeClickable(colors));
         dc.myJSClick(colors);
 
-        //wait.until(ExpectedConditions.elementToBeClickable(dc.qty));
         actions.moveToElement(dc.qty).doubleClick().build().perform();
-
-        //dc.myJSClick(dc.qty);
         dc.qty.clear();
         dc.qty.sendKeys("2");
 
-        //actions.moveToElement(dc.qty).doubleClick(dc.qty).sendKeys("2").build().perform();
         dc.myJSClick(dc.addToCart);
         wait.until(ExpectedConditions.elementToBeClickable(dc.myCart));
     }
@@ -73,8 +65,8 @@ public class US_705_ZehraSteps {
     @And("Delete the item from the cart")
     public void deleteTheItemFromTheCart() {
         dc.myJSClick(dc.myCart);
-        // dc.myJSClick(dc.deleteCart);
-        if (dc.deleteCart.size() >= 2) {
+
+        if (dc.deleteCart.size() > 2) {
             int trashButton = (int) (Math.random() * dc.deleteCart.size());
             String trash = dc.deleteCart.get(trashButton).getText();
             dc.deleteCart.get(trashButton).click();
@@ -83,10 +75,14 @@ public class US_705_ZehraSteps {
             dc.myClick(dc.myCart);
         dc.myClick(dc.trashcan);
 
-        //dc.myJSClick(trash);
+
         dc.myClick(dc.okButton);
 
     }
 
 
+    @And("Once deleting one item empty cart message should be seen")
+    public void ifDeletingOneItemEmptyCartMessageShouldBeSeen() {
+        Assert.assertTrue(dc.noItems.isDisplayed());
+    }
 }
