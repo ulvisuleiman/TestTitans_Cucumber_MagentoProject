@@ -41,6 +41,7 @@ public class US_703_UlviSteps {
 
     @Given("Click on Add New Address button")
     public void clickOnAddNewAddressButton() {
+        dcu.myClick(dcu.addNewAddress);
     }
 
     @When("User should add new address")

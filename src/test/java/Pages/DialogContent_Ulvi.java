@@ -40,6 +40,9 @@ public class DialogContent_Ulvi extends ParentPage {
     @FindBy(css = "[name='telephone']")
     public WebElement phoneInput;
 
+    @FindBy(css = "[title='Add New Address']")
+    public WebElement addNewAddress;
+
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
             case "firstNameInput":
@@ -58,6 +61,8 @@ public class DialogContent_Ulvi extends ParentPage {
                 return this.countryIdInput;
             case "phoneInput":
                 return this.phoneInput;
+            case "addNewAddress":
+                return this.addNewAddress;
         }
         return null;
     }}

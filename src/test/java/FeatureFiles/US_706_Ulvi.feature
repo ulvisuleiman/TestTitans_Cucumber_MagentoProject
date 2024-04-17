@@ -6,6 +6,7 @@ Feature: Address Addition
     Then User must click on My Account and Manage Address button
 
   Scenario Outline:
+    Given Click on Add New Address button
     When User should add new address
       | firstNameInput | <firstName>   |
       | lastNameInput  | <lastName>    |
