@@ -34,9 +34,9 @@ public class US_705_ZehraSteps {
     @Then("Add random item from the list")
     public void addRandomItemFromTheListToCart() {
         int rndmSelection = (int) (Math.random() * dc.shortsSelection.size());
-        WebElement shorts = dc.shortsSelection.get(rndmSelection);
-        System.out.println(shorts.getText());
-        dc.myJSClick(shorts);
+        String shorts = dc.shortsSelection.get(rndmSelection).getText();
+        //System.out.println(shorts.getText());
+        dc.shortsSelection.get(rndmSelection).click();
 
     }
 
@@ -60,12 +60,12 @@ public class US_705_ZehraSteps {
         //wait.until(ExpectedConditions.elementToBeClickable(dc.qty));
         //actions.moveToElement(dc.qty).doubleClick().build().perform();
 
-        //dc.myJSClick(dc.qty);
-        //dc.qty.clear();
-        //dc.qty.sendKeys("2");
+        dc.myJSClick(dc.qty);
+        dc.qty.clear();
+        dc.qty.sendKeys("2");
 
         //actions.moveToElement(dc.qty).doubleClick(dc.qty).sendKeys("2").build().perform();
-        //dc.myJSClick(dc.addToCart);
+        dc.myJSClick(dc.addToCart);
     }
     @And("Delete the item from the cart")
     public void deleteTheItemFromTheCart() {
