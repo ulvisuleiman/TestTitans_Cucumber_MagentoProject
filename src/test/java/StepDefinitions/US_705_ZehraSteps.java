@@ -58,17 +58,26 @@ public class US_705_ZehraSteps {
         dc.myJSClick(colors);
 
         //wait.until(ExpectedConditions.elementToBeClickable(dc.qty));
-        //actions.moveToElement(dc.qty).doubleClick().build().perform();
+        actions.moveToElement(dc.qty).doubleClick().build().perform();
 
-        dc.myJSClick(dc.qty);
+        //dc.myJSClick(dc.qty);
         dc.qty.clear();
         dc.qty.sendKeys("2");
 
         //actions.moveToElement(dc.qty).doubleClick(dc.qty).sendKeys("2").build().perform();
         dc.myJSClick(dc.addToCart);
+        wait.until(ExpectedConditions.elementToBeClickable(dc.myCart));
     }
     @And("Delete the item from the cart")
     public void deleteTheItemFromTheCart() {
+        dc.myJSClick(dc.myCart);
+       // dc.myJSClick(dc.deleteCart);
+       int trashButton = (int) (Math.random() * dc.deleteCart.size());
+       String trash = dc.deleteCart.get(trashButton).getText();
+       dc.deleteCart.get(trashButton).click();
+
+       //dc.myJSClick(trash);
+        //dc.myJSClick(dc.okButton);
 
     }
 

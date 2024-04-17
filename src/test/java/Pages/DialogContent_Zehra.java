@@ -7,10 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class DialogContent_Zehra extends ParentPage{
+public class DialogContent_Zehra extends ParentPage {
     public DialogContent_Zehra() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
+
     @FindBy(xpath = "//*[text()='Women']")
     public WebElement womenTab;
     @FindBy(xpath = "(//*[text()='Bottoms'])[1]")
@@ -28,7 +29,12 @@ public class DialogContent_Zehra extends ParentPage{
     public WebElement qty;
     @FindBy(xpath = "//button[@title='Add to Cart']")
     public WebElement addToCart;
-
+    @FindBy(css = "[class='action showcart']")
+    public WebElement myCart;
+    @FindBy(css = "[class='action delete']")
+    public List<WebElement> deleteCart;
+    @FindBy(css = "[class='action-primary action-accept']")
+    public WebElement okButton;
 
 
 }
