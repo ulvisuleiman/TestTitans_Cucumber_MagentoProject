@@ -11,13 +11,12 @@ Feature: Address Addition
       | lastNameInput  | <lastName>    |
       | streetInput    | <street>      |
       | cityInput      | <city>        |
-      | stateInput     | <state>       |
       | postCodeInput  | <postCode>    |
       | phoneInput     | <phoneNumber> |
-      | countryIdInput | <countryId>   |
+
     Then User should mark one address as the default address
     And User saves the changes
 
     Examples:
-      | firstName | lastName | street            | city    | state    | postCode | phoneNumber | countryId |
-      | Alex      | Johnson  | 789 Oak Boulevard | Chicago | Illinois | 60601    | 555-9012    | USA       |
+      | firstName | lastName | street            | city    |  postCode | phoneNumber |
+      | Alex      | Johnson  | 789 Oak Boulevard | Chicago |  60601    | 555-9012    |
