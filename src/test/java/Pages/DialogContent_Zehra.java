@@ -29,7 +29,7 @@ public class DialogContent_Zehra extends ParentPage {
     public WebElement qty;
     @FindBy(xpath = "//button[@title='Add to Cart']")
     public WebElement addToCart;
-    @FindBy(css = "[class='action showcart']")
+    @FindBy(css = "[class='counter-number']")
     public WebElement myCart;
     @FindBy(css = "[class='action delete']")
     public List<WebElement> deleteCart;

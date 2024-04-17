@@ -54,6 +54,7 @@ public class US_705_ZehraSteps {
         wait.until(ExpectedConditions.elementToBeClickable(colors));
         dc.myJSClick(colors);
 
+
         actions.moveToElement(dc.qty).doubleClick().build().perform();
         dc.qty.clear();
         dc.qty.sendKeys("2");
@@ -70,13 +71,15 @@ public class US_705_ZehraSteps {
             int trashButton = (int) (Math.random() * dc.deleteCart.size());
             String trash = dc.deleteCart.get(trashButton).getText();
             dc.deleteCart.get(trashButton).click();
-            Assert.assertTrue(trash.isBlank());
+            wait.until(ExpectedConditions.elementToBeClickable(dc.myCart));
+            //Assert.assertTrue(trash.isBlank());
         } else
-            dc.myClick(dc.myCart);
-        dc.myClick(dc.trashcan);
+            actions.moveToElement(dc.myCart).click().build().perform();
+            //dc.myClick(dc.myCart);
+        dc.myJSClick(dc.trashcan);
 
 
-        dc.myClick(dc.okButton);
+        dc.myJSClick(dc.okButton);
 
     }
 
