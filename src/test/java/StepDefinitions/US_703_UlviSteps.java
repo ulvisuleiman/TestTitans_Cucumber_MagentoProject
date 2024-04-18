@@ -54,10 +54,12 @@ public class US_703_UlviSteps {
             WebElement txtBoxWebElement = dcu.getWebElement(listTxtYazi.get(i).get(0));
             dcu.mySendKeys(txtBoxWebElement, listTxtYazi.get(i).get(1));
         }
-        Select countryMenu = new Select(dcu.countryIdInput);
-        countryMenu.selectByIndex(3);
-        Select stateMenu = new Select(dcu.stateInput);
-        stateMenu.selectByIndex(2);
+//        Select countryMenu = new Select(dcu.countryIdInput);
+//        countryMenu.selectByIndex(3);
+//        Select stateMenu = new Select(dcu.stateInput);
+//        stateMenu.selectByIndex(2);
+        dcu.mySendKeys(dcu.stateInput, "Illinois");
+        dcu.selectElement(dcu.countryIdInput);
     }
 
     @Then("User should mark one address as the default address")

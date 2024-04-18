@@ -25,4 +25,29 @@ public class LeftNav_Ulvi extends ParentPage{
 
     @FindBy(xpath = "//*@data-action='save-address']")
     public WebElement saveAddressBtn;
+
+    @FindBy(css = "[title='Radiant Tee']")
+    public WebElement product;
+
+    @FindBy(css = "[option-label='L']")
+    public WebElement sizeOfProduct;
+
+    @FindBy(css = "[option-label='Purple']")
+    public WebElement colorOfProduct;
+
+    @FindBy(css = "[title='Add to Cart']")
+    public WebElement addToCart;
+
+    @FindBy(css = "[class='action showcart']")
+    public WebElement myCart;
+
+    @FindBy(css = "[title='Proceed to Checkout']")
+    public WebElement proceedToCheckout;
+
+    @FindBy(css = "[class='button action continue primary']")
+    public WebElement nextBtn;
+
+    @FindBy(css = "[title='Place Order']")
+    public WebElement placeOrder;
+
 }

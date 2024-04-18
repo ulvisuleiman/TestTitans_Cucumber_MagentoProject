@@ -43,6 +43,9 @@ public class DialogContent_Ulvi extends ParentPage {
     @FindBy(css = "[title='Add New Address']")
     public WebElement addNewAddress;
 
+    @FindBy(css = "[data-ui-id='page-title-wrapper']")
+    public WebElement thanksMessage;
+
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
             case "firstNameInput":
