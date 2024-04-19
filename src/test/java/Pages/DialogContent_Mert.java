@@ -43,4 +43,7 @@ public class DialogContent_Mert extends ParentPage{
 
     @FindBy (xpath = "(//span[text()='Jackets'])[2]")
     public WebElement unitJackets;
+
+    @FindBy (xpath = "(//div[@class='product details product-item-details'])[6]//a[1]")
+    public WebElement product;
 }

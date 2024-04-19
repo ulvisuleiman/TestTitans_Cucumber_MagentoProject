@@ -13,6 +13,6 @@ public class US_707_MertSteps {
         driverAction.moveToElement(dcm.unitMen).build().perform();
         driverAction.moveToElement(dcm.unitTops).build().perform();
         dcm.myClick(dcm.unitJackets);
-
+        dcm.myClick(dcm.product);
     }
 }
