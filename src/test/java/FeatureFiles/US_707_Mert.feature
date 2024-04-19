@@ -5,4 +5,4 @@ Feature: Search Functionality
     When User must login to the account
 
     Scenario: Finding Product
-      Given Search for the jacket name as "Taurus Elements Shell"
+      Given Search for the jacket name as Taurus Elements Shell

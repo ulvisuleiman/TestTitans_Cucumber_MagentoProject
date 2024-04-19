@@ -34,4 +34,13 @@ public class DialogContent_Mert extends ParentPage{
 
     @FindBy (xpath = "(//li[@class='authorization-link'])[1]/a")
     public WebElement logoutButton;
+
+    @FindBy (xpath = "//span[text()='Men']")
+    public WebElement unitMen;
+
+    @FindBy (xpath = "(//span[text()='Tops'])[2]")
+    public WebElement unitTops;
+
+    @FindBy (xpath = "(//span[text()='Jackets'])[2]")
+    public WebElement unitJackets;
 }
