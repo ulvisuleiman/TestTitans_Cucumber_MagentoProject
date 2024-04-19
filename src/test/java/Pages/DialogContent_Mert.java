@@ -34,4 +34,34 @@ public class DialogContent_Mert extends ParentPage{
 
     @FindBy (xpath = "(//li[@class='authorization-link'])[1]/a")
     public WebElement logoutButton;
+
+    @FindBy (xpath = "//span[text()='Men']")
+    public WebElement unitMen;
+
+    @FindBy (xpath = "(//span[text()='Tops'])[2]")
+    public WebElement unitTops;
+
+    @FindBy (xpath = "(//span[text()='Jackets'])[2]")
+    public WebElement unitJackets;
+
+    @FindBy (xpath = "(//div[@class='product details product-item-details'])[6]//a[1]")
+    public WebElement product;
+
+    @FindBy (xpath = "//span[text()='Taurus Elements Shell']")
+    public WebElement productName;
+
+    @FindBy (xpath = "//div[text()='MJ09']")
+    public WebElement productCode;
+
+    @FindBy (css = "[id='search']")
+    public WebElement searchBox;
+
+    @FindBy (css = "[class='action search']")
+    public WebElement searchButton;
+
+    @FindBy (xpath = "(//div[@class='product details product-item-details'])//a[1]")
+    public WebElement verifyProduct;
+
+    @FindBy (css = "[class='message notice']>div")
+    public WebElement errorMessageProduct;
 }
