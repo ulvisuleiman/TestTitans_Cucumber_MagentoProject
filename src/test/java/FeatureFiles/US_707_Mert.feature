@@ -8,3 +8,5 @@ Feature: Search Functionality
       Given Search for the jacket name as Taurus Elements Shell
       When User must verify the Product
       Then User must search for the product name as "MJ09" in search box
+      And User must enter an invalid product code as "KTYU" in search box
+      And User should see the error message

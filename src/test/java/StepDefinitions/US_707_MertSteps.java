@@ -3,6 +3,7 @@ package StepDefinitions;
 import Pages.DialogContent_Mert;
 import Pages.LeftNav_Mert;
 import Utilities.GWD;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -33,5 +34,17 @@ public class US_707_MertSteps {
         lfm.myClick(lfm.logo);
         lfm.mySendKeys(dcm.searchBox,product);
         dcm.myClick(dcm.searchButton);
+        dcm.verifyContainsText(dcm.verifyProduct,"Taurus Elements Shell");
+    }
+
+    @And("User must enter an invalid product code as {string} in search box")
+    public void userMustEnterAnInvalidProductCodeAsInSearchBox(String code) {
+        dcm.mySendKeys(dcm.searchBox,code);
+        dcm.myClick(dcm.searchButton);
+    }
+
+    @And("User should see the error message")
+    public void userShouldSeeTheErrorMessage() {
+        dcm.verifyContainsText(dcm.errorMessageProduct, "Your search returned no results.");
     }
 }

@@ -58,4 +58,10 @@ public class DialogContent_Mert extends ParentPage{
 
     @FindBy (css = "[class='action search']")
     public WebElement searchButton;
+
+    @FindBy (xpath = "(//div[@class='product details product-item-details'])//a[1]")
+    public WebElement verifyProduct;
+
+    @FindBy (css = "[class='message notice']>div")
+    public WebElement errorMessageProduct;
 }
