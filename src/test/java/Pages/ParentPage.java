@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -49,6 +50,13 @@ public class ParentPage {
 
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform(); // Sayfaya ESC gönderip bildirimleri
         // kapatıyoruz.
+    }
+
+    public void selectElement(WebElement element){
+        Select countryMenu = new Select(element);
+        countryMenu.selectByIndex(3);
+        Select stateMenu = new Select(element);
+        stateMenu.selectByIndex(2);
     }
 
 }

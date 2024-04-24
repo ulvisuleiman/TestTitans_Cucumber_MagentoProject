@@ -16,4 +16,7 @@ public class LeftNav_Mert extends ParentPage{
 
     @FindBy (xpath = "(//span[text()='Forgot Your Password?'])[1]")
     public WebElement forgotMyPasswordButton;
+
+    @FindBy (css = "[class='logo']>img")
+    public WebElement logo;
 }

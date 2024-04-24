@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.io.IOException;
 import java.util.List;
@@ -40,16 +41,25 @@ public class US_703_UlviSteps {
 
     @Given("Click on Add New Address button")
     public void clickOnAddNewAddressButton() {
+        dcu.myClick(dcu.addNewAddress);
     }
 
     @When("User should add new address")
     public void userShouldAddNewAddress(DataTable textBoxAndTexts) {
         List<List<String>> listTxtYazi = textBoxAndTexts.asLists(String.class);
+//        dcu.stateMenu.selectByIndex(4);
+//       dcu.countryMenu.selectByIndex(3);
 
         for (int i = 0; i < listTxtYazi.size(); i++) {
             WebElement txtBoxWebElement = dcu.getWebElement(listTxtYazi.get(i).get(0));
             dcu.mySendKeys(txtBoxWebElement, listTxtYazi.get(i).get(1));
         }
+//        Select countryMenu = new Select(dcu.countryIdInput);
+//        countryMenu.selectByIndex(3);
+//        Select stateMenu = new Select(dcu.stateInput);
+//        stateMenu.selectByIndex(2);
+        dcu.mySendKeys(dcu.stateInput, "Illinois");
+        dcu.selectElement(dcu.countryIdInput);
     }
 
     @Then("User should mark one address as the default address")
